@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 601289315879027058}
   m_Layer: 0
   m_Name: Target 1
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,4 +123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 1935023587763595180, guid: feab2021b19c0a24791d210a76f5118c, type: 3}
-  point: 2
+  punchSound: {fileID: 8300000, guid: 47d8b67886773ce4da0b11922fc38cb4, type: 3}
+  point: 1
