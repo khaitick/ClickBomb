@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreUI;
     public TextMeshProUGUI healthUI;
     public TextMeshProUGUI gameOverUI;
+    public TextMeshProUGUI pauseUI;
     public Button restartUI;
     public bool spawn;
     public bool gameOver;
@@ -24,10 +25,16 @@ public class GameManager : MonoBehaviour
     private float maxSpawnRate = 1.0f;
     private float spawnRate;
 
+    private void Start()
+    {
+        gameOver = true;
+    }
+
     public void GameStart(int difficulty)
     {
         spawnRate = maxSpawnRate / difficulty;
         gameOver = false;
+        pauseUI.gameObject.SetActive(true);
         menuUI.gameObject.SetActive(false);
         gameOverUI.gameObject.SetActive(false);
         restartUI.gameObject.SetActive(false);
@@ -83,6 +90,7 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         gameOverUI.gameObject.SetActive(true);
         restartUI.gameObject.SetActive(true);
+        pauseUI.gameObject.SetActive(false);
         GameObject[] remainingTarget = GameObject.FindGameObjectsWithTag("Target");
         for (int i = 0; i < remainingTarget.Length; i++)
         {

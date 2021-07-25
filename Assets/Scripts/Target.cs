@@ -13,12 +13,14 @@ public class Target : MonoBehaviour
     private Rigidbody rb;
     private GameManager gm;
     private AudioSource audioSource;
+    private HoverPauseGame pause;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GameObject.Find("AudioHandler").GetComponent<AudioSource>();
+        pause = GameObject.Find("Pause").GetComponent<HoverPauseGame>();
 
         transform.position = new Vector3(UnityEngine.Random.Range(-4, 4), -4);
         transform.localScale *= UnityEngine.Random.Range(0.5f, 1f);
@@ -51,9 +53,9 @@ public class Target : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void TriggerDestroy()
     {
-        if (!gm.gameOver)
+        if (!gm.gameOver && !pause.pause)
         {
             gm.UpdateScore(point);
             audioSource.PlayOneShot(punchSound);
