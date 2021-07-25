@@ -1,6 +1,6 @@
 # ClickBomb
 
-![Demo at Unity Learn](play.unity.com/mg/other/webgl-builds-78941)
+[Demo at Unity Learn](play.unity.com/mg/other/webgl-builds-78941)
 
 ![ss1](https://user-images.githubusercontent.com/62642278/126867002-8668f536-5583-4a33-8c01-b3a9be77a3f2.PNG)
 
